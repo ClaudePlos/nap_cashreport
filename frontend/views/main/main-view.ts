@@ -17,7 +17,7 @@ export class MainView extends LitElement {
   @property({ type: Object }) location = router.location;
 
   @property({ type: Array }) menuTabs: MenuTab[] = [
-    { route: 'hello', name: 'Hello World' },
+    { route: 'cash-register', name: 'Cash Register' },
     { route: 'about', name: 'About' },
     { route: 'master-detail', name: 'Master-Detail' },
   ];

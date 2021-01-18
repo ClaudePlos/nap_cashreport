@@ -1,4 +1,4 @@
-package kskowronski.data.entity;
+package kskowronski.data.entity.egeria;
 
 
 import javax.persistence.Column;
