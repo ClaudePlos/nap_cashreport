@@ -17,6 +17,7 @@ export class HelloWorldView extends LitElement {
 
     render() {
         return html`
+      <div>version 01</div>
       <vaadin-text-field label="Your name" @value-changed="${this.nameChanged}"></vaadin-text-field>
       <vaadin-button @click="${this.sayHello}">Say hello</vaadin-button>
     `;

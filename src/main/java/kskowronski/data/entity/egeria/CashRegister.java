@@ -1,15 +1,18 @@
 package kskowronski.data.entity.egeria;
 
 
+import kskowronski.data.AbstractEntity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "NZT_KASY")
-public class CashRegister {
+public class CashRegister implements Serializable {
 
     @Id
     @Column(name = "kas_Id", nullable = false)
@@ -24,7 +27,11 @@ public class CashRegister {
     @Column(name="kas_frm_id")
     private BigDecimal casFrmId;
 
-    public CashRegister() {
+    public CashRegister(BigDecimal casId, String casName, String casDesc, BigDecimal casFrmId) {
+        this.casId = casId;
+        this.casName = casName;
+        this.casDesc = casDesc;
+        this.casFrmId = casFrmId;
     }
 
     public BigDecimal getCasId() {

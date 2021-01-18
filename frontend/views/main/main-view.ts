@@ -99,6 +99,15 @@ export class MainView extends LitElement {
         hr {
           margin: 0;
         }
+        
+        header h1 {
+          font-size: var(--lumo-font-size-l);
+          margin: 0;
+        }
+        
+        header .logout {
+          margin-right: 12px;
+        }
       `,
     ];
   }
@@ -110,6 +119,7 @@ export class MainView extends LitElement {
           <vaadin-drawer-toggle></vaadin-drawer-toggle>
           <h1>${this.getSelectedTabName(this.menuTabs)}</h1>
           <img src="images/user.svg" alt="Avatar" />
+          <a href="logout" class="logout">Log out</a>
         </header>
 
         <div slot="drawer">
@@ -169,7 +179,7 @@ export class MainView extends LitElement {
     if (currentTab) {
       tabName = currentTab.name;
     } else {
-      tabName = 'Hello World';
+      tabName = 'Cash Register';
     }
     return tabName;
   }

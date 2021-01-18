@@ -2,7 +2,7 @@ import { Commands, Context, Route, Router } from '@vaadin/router';
 
 import './views/main/main-view';
 import './views/login/login-view';
-import './views/helloworld/hello-world-view';
+import './views/cashregister/cash-register-view';
 import { handleAuthentication, isAuthenticated, signOut } from './auth';
 
 const authGuard = async (context: Context, commands: Commands) => {
