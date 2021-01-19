@@ -41,13 +41,23 @@ const routes: Route[] = [
         component: 'main-view',
         action: authGuard, // Require a logged in user to access
         children: [
-            { path: '', component: 'cash-register-view' },
-            { path: 'cash-register', component: 'cash-register-view' },
+            {   path: '',
+                component: 'about-view',
+                action: async () => {
+                    await import('./views/about/about-view');
+                },
+            },
             {
                 path: 'about',
                 component: 'about-view',
                 action: async () => {
                     await import('./views/about/about-view');
+                },
+            },
+            {   path: 'cash-register',
+                component: 'cash-register-view',
+                action: async () => {
+                    await import('./views/cashregister/cash-register-view');
                 },
             },
             {

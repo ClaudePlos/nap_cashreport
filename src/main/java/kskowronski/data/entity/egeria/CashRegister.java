@@ -27,11 +27,7 @@ public class CashRegister implements Serializable {
     @Column(name="kas_frm_id")
     private BigDecimal casFrmId;
 
-    public CashRegister(BigDecimal casId, String casName, String casDesc, BigDecimal casFrmId) {
-        this.casId = casId;
-        this.casName = casName;
-        this.casDesc = casDesc;
-        this.casFrmId = casFrmId;
+    public CashRegister() {
     }
 
     public BigDecimal getCasId() {
