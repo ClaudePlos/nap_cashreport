@@ -47,22 +47,22 @@ export class CashRegisterView extends LitElement {
                           @active-item-changed=${this.itemSelected}
                   >
                       <vaadin-grid-sort-column auto-width path="casName" header="KASA"></vaadin-grid-sort-column>
-                      <vaadin-grid-sort-column auto-width path="casDesc"></vaadin-grid-sort-column>
-                      <vaadin-grid-sort-column auto-width path="casFrmId"></vaadin-grid-sort-column>
                   </vaadin-grid>
               </div>
+              <div id="cash-report-layout">
+                  Raporyt Kasowe
+              </div>
           </vaadin-split-layout>
-        <div>End</div>
     `;
     }
 
     private async getGridDataCash(params: GridDataProviderParams, callback: GridDataProviderCallback) {
         const index = params.page * params.pageSize;
         const data = await CashRegisterEndpoint.list(index, params.pageSize, params.sortOrders as any);
-        const data2 = await CashRegisterEndpoint.getAllCashRegister();
+        //const data2 = await CashRegisterEndpoint.getAllCashRegister();
         console.log(data);
         //console.log(data2);
-        callback(data2);
+        callback(data);
     }
 
     async connectedCallback() {
